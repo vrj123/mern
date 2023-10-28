@@ -6,9 +6,9 @@ const server=express();
 // server.use(cors({ origin: 'http://localhost:5173' }));
 server.use(express.static('dist'));
 
-// server.use('*', (req, res)=>{
-//   res.sendFile(path.resolve(__dirname,'dist','index.html'));
-// })
+server.use('*', (req, res)=>{
+  res.sendFile(path.resolve(__dirname,'dist','index.html'));
+})
 
 
 
