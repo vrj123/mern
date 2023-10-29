@@ -6,9 +6,7 @@ const server=express();
 // server.use(cors({ origin: 'http://localhost:5173' }));
 server.use(express.static('dist'));
 
-// server.use('*', (req, res)=>{
-//   res.sendFile(path.resolve(__dirname,'dist','index.html'));
-// })
+
 
 
 
@@ -24,6 +22,11 @@ async function main() {
 }
 server.use(express.json());
 server.use('/', route.router);
+
+
+server.use('*', (req, res)=>{
+  res.sendFile(path.resolve(__dirname,'dist','index.html'));
+})
 
 server.listen(8080, ()=>{
     console.log('Server started');
