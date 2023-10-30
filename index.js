@@ -2,6 +2,7 @@ const mongoose=require('mongoose');
 const express=require('express');
 const route=require('./routes/product');
 const cors=require('cors');
+const path=require('path');
 const server=express();
 // server.use(cors({ origin: 'http://localhost:5173' }));
 server.use(express.static('dist'));
